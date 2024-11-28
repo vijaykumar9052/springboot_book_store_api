@@ -56,6 +56,7 @@ public class BookRestController {
             return new ResponseEntity<>(byId.get(), HttpStatus.OK);
         }
         return new ResponseEntity<>(null, HttpStatus.OK);
+        return new ResponseEntity<>(null, HttpStatus.OK);
 
     }
 }
