@@ -15,6 +15,8 @@ public class BookRestController {
 
 	@Autowired
 	private BookRepo bookRepo;
+	
+	
 
 	@PostMapping("/book")
 	public ResponseEntity<Book> saveBook(@RequestBody Book book) {
@@ -39,7 +41,7 @@ public class BookRestController {
 	public ResponseEntity<Book> getBook(@PathVariable Integer bookId) {
 		Optional<Book> byId = bookRepo.findById(bookId);
 		if (byId.isPresent()) {
-			return new ResponseEntity<>(byId.get(), HttpStatus.OK);
+			return new ResponseEntity<> (byId.get(), HttpStatus.OK);
 		}
 		return new ResponseEntity<>(null, HttpStatus.OK);
 
@@ -54,6 +56,7 @@ public class BookRestController {
 			return new ResponseEntity<>(byId.get(), HttpStatus.OK);
 		}
 		return new ResponseEntity<>(null, HttpStatus.OK);
+		
 
 	}
 }
